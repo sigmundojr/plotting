@@ -1,0 +1,14 @@
+#Plotting normal distribution
+
+
+H, edges = np.histogram(data.Lucro_Momento, bins=20)
+
+plt.figure(figsize=(10, 4))
+ax = plt.subplot(111)
+ax.bar(edges[:-1], H / float(sum(H)), width=edges[1] - edges[0])
+ax.text(0.9, 0.9, "%g rows" % len(data),
+        horizontalalignment="right", transform=ax.transAxes)
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.minorticks_on()
+plt.show()
